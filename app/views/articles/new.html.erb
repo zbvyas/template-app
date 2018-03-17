@@ -8,15 +8,33 @@
 
     <div class="container">
       <div class="jumbotron text-center">
-        <h1>Alpha Blog Demo</h1>
+        <h1>Create an Article</h1>
         <p>This is to demonstrate how rails works</p>
       </div>
+
       <nav class="navbar navbar-default">
         <ul class="nav navbar-nav">
           <li><%= link_to 'Home', root_path%></li>
           <li><%= link_to 'About', about_path%></li>
         </ul>
       </nav>
+
+      <%= form_for @article do |f| %>
+        <p>
+          <%= f.label :title %><br/>
+          <%= f.text_field :title %>
+        </p>
+
+        <p>
+          <%= f.label :description %><br/>
+          <%= f.text_area :description %>
+        </p>
+
+        <p>
+          <%= f.submit %>
+        </p>
+      <% end %>
+
     </div>
 
   </body>
