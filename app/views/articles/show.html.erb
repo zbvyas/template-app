@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="jumbotron text-center">
+        <h1>Showing Selected Article</h1>
+        <p>This is to demonstrate how rails works</p>
+      </div>
+
+      <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Home', root_path%></li>
+          <li><%= link_to 'About', about_path%></li>
+        </ul>
+      </nav>
+
+      <div class="alert alert-success">
+        <% flash.each do |name, msg| %>
+          <p><%= msg %></p>
+        <% end %>
+      </div>
+
+      <p><b>Title:</b> <%= @article.title %></p>
+      <p><b>Description:</b> <%= @article.description %></p>
+
+    </div>
+
+  </body>
+
+</html

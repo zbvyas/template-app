@@ -19,6 +19,17 @@
         </ul>
       </nav>
 
+      <% if @article.errors.any? %>
+      <div class="alert alert-warning">
+        <h3>The following errors prevented the article from getting created</h3>
+        <ul>
+          <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
       <%= form_for @article do |f| %>
         <p>
           <%= f.label :title %><br/>
