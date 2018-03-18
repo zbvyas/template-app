@@ -11,13 +11,9 @@
         <h1>Alpha Blog Demo</h1>
         <p>This is to demonstrate how rails works</p>
       </div>
-      <nav class="navbar navbar-default">
-        <ul class="nav navbar-nav">
-          <li><%= link_to 'Home', root_path%></li>
-          <li><%= link_to 'About', about_path%></li>
-          <li><%= link_to 'Articles', articles_path%></li>
-        </ul>
-      </nav>
+
+      <%= render 'layouts/nav' %>
+      
     </div>
 
   </body>

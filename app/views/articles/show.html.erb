@@ -12,19 +12,9 @@
         <p>This is to demonstrate how rails works</p>
       </div>
 
-      <nav class="navbar navbar-default">
-        <ul class="nav navbar-nav">
-          <li><%= link_to 'Home', root_path%></li>
-          <li><%= link_to 'About', about_path%></li>
-          <li><%= link_to 'Articles', articles_path%></li>
-        </ul>
-      </nav>
+      <%= render 'layouts/nav' %>
 
-      <% flash.each do |name, msg| %>
-        <div class="alert alert-success">
-          <p><%= msg %></p>
-        </div>
-        <% end %>
+      <%= render 'layouts/messages' %>
 
       <div class="container">
         <p><b>Title:</b> <%= @article.title %></p>
@@ -36,6 +26,9 @@
       </div>
       <div class="btn btn-default">
         <%= link_to "Edit", edit_article_path(@article), :class => "btn-small" %>
+      </div>
+      <div class="btn btn-default">
+        <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn-small" %>
       </div>
 
     </div>
