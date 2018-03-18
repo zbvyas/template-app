@@ -1,42 +1,36 @@
-<div class="container">
-  <div class="jumbotron text-center">
-    <h1>Articles</h1>
-    <p>This is to demonstrate how rails works</p>
-  </div>
-
-  <%= render 'layouts/nav' %>
-
-  <div class="btn btn-default">
-    <%= link_to "Create Article", new_article_path, :class => "btn-small" %>
-  </div>
-
-  <%= render 'layouts/messages' %>
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Links</th>
-      </tr>
-    </thead>
-    <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.description %></td>
-      <td>
-          <div class="btn btn-default">
-            <%= link_to "Edit", edit_article_path(article), :class => "btn-small" %>
-          </div>
-          <div class="btn btn-default">
-            <%= link_to "Show", article_path(article), :class => "btn-small" %>
-          </div>
-          <div class="btn btn-default">
-            <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn-small" %>
-          </div>
-        </td>
-    </tr>
-    <% end %>
-  </table>
-
+<div class="jumbotron text-center">
+  <h1>Articles</h1>
 </div>
+
+<div class="btn btn-default">
+  <%= link_to "Create Article", new_article_path, :class => "btn-small" %>
+</div>
+
+<%= render 'layouts/messages' %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Links</th>
+    </tr>
+  </thead>
+  <% @articles.each do |article| %>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.description %></td>
+    <td>
+        <div class="btn btn-default">
+          <%= link_to "Edit", edit_article_path(article), :class => "btn-small" %>
+        </div>
+        <div class="btn btn-default">
+          <%= link_to "Show", article_path(article), :class => "btn-small" %>
+        </div>
+        <div class="btn btn-default">
+          <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn-small" %>
+        </div>
+      </td>
+  </tr>
+  <% end %>
+</table>

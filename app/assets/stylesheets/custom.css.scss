@@ -1,2 +1,62 @@
+//$navbar-default-bg: #b3d1ff;
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// id = #logo
+// class = .logo
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #e0e0eb;
+  text-decoration: none;
+}
+
+.jumbotron {
+  background-image: asset-url('discussion-medium.jpg');
+  background-size: cover;
+  height: 620px;
+}
+
+.jumbotron h1 {
+  color: #000;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#summary {
+  color: #000
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
