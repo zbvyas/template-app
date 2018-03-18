@@ -16,17 +16,27 @@
         <ul class="nav navbar-nav">
           <li><%= link_to 'Home', root_path%></li>
           <li><%= link_to 'About', about_path%></li>
+          <li><%= link_to 'Articles', articles_path%></li>
         </ul>
       </nav>
 
-      <div class="alert alert-success">
-        <% flash.each do |name, msg| %>
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-success">
           <p><%= msg %></p>
+        </div>
         <% end %>
+
+      <div class="container">
+        <p><b>Title:</b> <%= @article.title %></p>
+        <p><b>Description:</b> <%= @article.description %></p>
       </div>
 
-      <p><b>Title:</b> <%= @article.title %></p>
-      <p><b>Description:</b> <%= @article.description %></p>
+      <div class="btn btn-default">
+        <%= link_to "Back", articles_path, :class => "btn-small" %>
+      </div>
+      <div class="btn btn-default">
+        <%= link_to "Edit", edit_article_path(@article), :class => "btn-small" %>
+      </div>
 
     </div>
 
