@@ -1,34 +1,26 @@
-<html>
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1>Showing Selected Article</h1>
+    <p>This is to demonstrate how rails works</p>
+  </div>
 
-  <body>
+  <%= render 'layouts/nav' %>
 
-    <div class="container">
-      <div class="jumbotron text-center">
-        <h1>Showing Selected Article</h1>
-        <p>This is to demonstrate how rails works</p>
-      </div>
+  <%= render 'layouts/messages' %>
 
-      <%= render 'layouts/nav' %>
+  <div class="container">
+    <p><b>Title:</b> <%= @article.title %></p>
+    <p><b>Description:</b> <%= @article.description %></p>
+  </div>
 
-      <%= render 'layouts/messages' %>
+  <div class="btn btn-default">
+    <%= link_to "Back", articles_path, :class => "btn-small" %>
+  </div>
+  <div class="btn btn-default">
+    <%= link_to "Edit", edit_article_path(@article), :class => "btn-small" %>
+  </div>
+  <div class="btn btn-default">
+    <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn-small" %>
+  </div>
 
-      <div class="container">
-        <p><b>Title:</b> <%= @article.title %></p>
-        <p><b>Description:</b> <%= @article.description %></p>
-      </div>
-
-      <div class="btn btn-default">
-        <%= link_to "Back", articles_path, :class => "btn-small" %>
-      </div>
-      <div class="btn btn-default">
-        <%= link_to "Edit", edit_article_path(@article), :class => "btn-small" %>
-      </div>
-      <div class="btn btn-default">
-        <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn-small" %>
-      </div>
-
-    </div>
-
-  </body>
-
-</html
+</div>
