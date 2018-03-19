@@ -1,6 +1,5 @@
-<div class="jumbotron text-center">
-  <h1>Showing Selected Article</h1>
-</div>
+<h1><%= @article.title %></h1>
+<hr>
 
 <%= render 'layouts/messages' %>
 
@@ -9,12 +8,6 @@
   <p><b>Description:</b> <%= @article.description %></p>
 </div>
 
-<div class="btn btn-default">
-  <%= link_to "Back", articles_path, :class => "btn-small" %>
-</div>
-<div class="btn btn-default">
-  <%= link_to "Edit", edit_article_path(@article), :class => "btn-small" %>
-</div>
-<div class="btn btn-default">
-  <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn-small" %>
-</div>
+<%= link_to "Back", articles_path, :class => "btn btn-default" %>
+<%= link_to "Edit", edit_article_path(@article), :class => "btn btn-default" %>
+<%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-default" %>

@@ -7,7 +7,7 @@
 #logo {
   float: left;
   font-size: 1.7em;
-  color: #000;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
@@ -19,21 +19,18 @@
 }
 
 .jumbotron {
-  background-image: asset-url('discussion-medium.jpg');
+  background-image: asset-url('rails.png');
+  background-position: center;
   background-size: cover;
-  height: 620px;
+  background-color: #000;
+  height: 550px;
 }
 
 .jumbotron h1 {
-  color: #000;
+  color: #fff;
   text-align: center;
-  margin-bottom: 30px;
   font-weight: bold;
   text-transform: uppercase;
-}
-
-#summary {
-  color: #000
 }
 
 footer {
