@@ -1,16 +1,6 @@
 <!-- The underscore at the beginning of this file name
 signifies that it's a partial template -->
-
-<% if @article.errors.any? %>
-<div class="alert alert-warning">
-  <h3>Errors:</h3>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+<%= render 'shared/errors', obj: @article %>
 
 <div class="row">
   <div class="col-xs-12">
