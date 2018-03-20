@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
     # rails 5 output looks like:
     # <ActionController::Parameters {"title"=>"This is a title", "description"=>"THis is some description"} permitted: false>
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       flash[:success] = "Article was successfully created!"
       redirect_to article_path(@article)
