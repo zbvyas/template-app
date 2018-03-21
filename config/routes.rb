@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # controllername#view
   root 'pages#home'
   get 'about', to: 'pages#about'
 
@@ -13,4 +14,6 @@ Rails.application.routes.draw do
   #              PATCH  /articles/:id(.:format)      articles#update
   #              PUT    /articles/:id(.:format)      articles#update
   #              DELETE /articles/:id(.:format)      articles#destroy
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
