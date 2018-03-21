@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :articles
+  has_many :articles, dependent: :destroy # whatever articles this user has, it will get destroyed when user is deleted
   # before user hits the db, it will take the email value and downcase it before saving it
   before_save {self.email = email.downcase}
   validates :username, presence: true,
