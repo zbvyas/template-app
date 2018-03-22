@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'minitest-reporters'
+gem 'rails-controller-testing' # assert_template has been moved to this gem as of Rails 5
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
